@@ -2,8 +2,8 @@ public class CustomerManager {
     public void AddCustomer(){
         System.out.println("Customer added");
     }
-    public void RemoveCustomer(){
-        System.out.println("Customer removed");
+    public void DeleteCustomer(){
+        System.out.println("Customer deleted");
     }
     public void UpdateCustomer(){
         System.out.println("Customer updated");
@@ -12,3 +12,5 @@ public class CustomerManager {
         System.out.println("Customer displayed");
     }
 }
+
+

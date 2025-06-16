@@ -5,24 +5,56 @@ import java.util.List;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        IsPrime();
-        IsVowel("E");
-        IsVowel("t");
-        WriteSuperNumbers();
-        WriteFriendNumbers();
+        isPrime();
+        isVowel("E");
+        isVowel("t");
+        writeSuperNumbers();
+        writeFriendNumbers();
+        inheritanceExample();
+        polimorphismExample();
+        abstractExample();
     }
 
-    private static void WriteFriendNumbers() {
-        for (int i = 1; i <= 1000; i++) {
-            int result1 = FindDividersSum(i);
+    private static void abstractExample() {
+        GameCalculator[] gameCalculators = new GameCalculator[] { new ManGameCalculator(), new WomanGameCalculator(), new KidsGameCalculator()};
 
-            if (i != result1 && FindDividersSum(result1) == i) {
+        for (GameCalculator gameCalculator : gameCalculators) {
+            gameCalculator.calculate();
+            gameCalculator.gameOver();
+        }
+    }
+
+    private static void polimorphismExample() {
+        BaseLogger[] loggers = new BaseLogger[]{new FileLogger(), new EMailLogger(), new DatabaseLogger(), new ConsoleLogger()};
+
+        for (BaseLogger logger : loggers) {
+            logger.log(logger.getClass().getSimpleName());
+        }
+        CustomerManager customerManager = new CustomerManager(new DatabaseLogger());
+        customerManager.add();
+    }
+
+    private static void inheritanceExample() {
+        BaseCreditManager[] baseCreditManagerList = new BaseCreditManager[]{new TeacherCreditManager(), new AgricultureCreditManager()};
+        CreditUI creditUI = new CreditUI();
+
+        for (BaseCreditManager baseCreditManager : baseCreditManagerList) {
+            creditUI.callCredits(baseCreditManager);
+            System.out.println(baseCreditManager.calculate(100));
+        }
+    }
+
+    private static void writeFriendNumbers() {
+        for (int i = 1; i <= 1000; i++) {
+            int result1 = findDividersSum(i);
+
+            if (i != result1 && findDividersSum(result1) == i) {
                 System.out.println(result1 + " and " + i + " friend numbers");
             }
         }
     }
 
-    private static int FindDividersSum(int i) {
+    private static int findDividersSum(int i) {
         int sum = 0;
         for (int j = 1; j < i; j++) {
             if (i % j == 0) {
@@ -33,7 +65,7 @@ public class Main {
         return sum;
     }
 
-    public static void IsPrime() {
+    public static void isPrime() {
         boolean isPrime;
         for (int i = 2; i < 25; i++) {
             isPrime = true;
@@ -54,7 +86,7 @@ public class Main {
         }
     }
 
-    private static void IsVowel(String word) {
+    private static void isVowel(String word) {
         switch (word.toLowerCase()) {
             case "a":
             case "e":
@@ -72,7 +104,7 @@ public class Main {
         }
     }
 
-    private static void WriteSuperNumbers() {
+    private static void writeSuperNumbers() {
         int sum = 0;
         int superNumber = 6;
         List<Integer> dividers = new ArrayList<Integer>();
