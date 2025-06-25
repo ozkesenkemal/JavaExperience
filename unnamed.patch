@@ -1,0 +1,62 @@
+Index: Arrays/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Arrays/src/Main.java b/Arrays/src/Main.java
+new file mode 100644
+--- /dev/null	(revision 2a3771933d4e3be41c57f8f0f77693a3d5355af5)
++++ b/Arrays/src/Main.java	(revision 2a3771933d4e3be41c57f8f0f77693a3d5355af5)
+@@ -0,0 +1,29 @@
++//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
++// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
++public class Main {
++    public static void main(String[] args) {
++        String[] students = {"Kemal", "Özgür", "Merve"};
++
++        for (int i = 0; i < students.length; i++) {
++            System.out.println(students[i]);
++        }
++
++        for (String student : students) {
++            System.out.println(student);
++        }
++
++        String[][] cities = new  String[2][2];
++
++        cities[0][0] = "İstanbul";
++        cities[0][1] = "Yalova";
++        cities[1][0] = "Balıkesir";
++        cities[1][1] = "İzmir";
++
++        for (int i = 0; i < cities[0].length; i++) {
++            for (int j = 0; j < cities[1].length; j++) {
++                System.out.print(cities[i][j] +" ");
++            }
++            System.out.println();
++        }
++    }
++}
+\ No newline at end of file
+Index: Arrays/Arrays.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Arrays/Arrays.iml b/Arrays/Arrays.iml
+new file mode 100644
+--- /dev/null	(revision 2a3771933d4e3be41c57f8f0f77693a3d5355af5)
++++ b/Arrays/Arrays.iml	(revision 2a3771933d4e3be41c57f8f0f77693a3d5355af5)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
