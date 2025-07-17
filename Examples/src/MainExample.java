@@ -20,7 +20,11 @@ public class MainExample {
     private static void interfaceExample() {
         ICustomerDal customerDal = new OracleCustomerDal();
         customerDal.add();
-        System.out.println("interface finished");
+        customerDal = new MySqlCustomerDal();
+        customerDal.add();
+        
+        CustomerManagerInterface customerManagerInterface = new CustomerManagerInterface(new MySqlCustomerDal());
+        customerManagerInterface.add();
     }
 
     private static void abstractExample() {

@@ -13,5 +13,6 @@ public class Main {
         MainLoop.main(null);
         MainString.main(null);
         MainExample.main(null);
+        MainStatics.main(null);
     }
 }
