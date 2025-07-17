@@ -1,7 +1,7 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
+public class MainMethod {
+    public static void mainMethod(String[] args) {
         calculateSum(1);
         calculateSum(1,2);
         calculateSum(1,2,3);

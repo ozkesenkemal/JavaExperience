@@ -1,6 +1,6 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class MainInheritence {
     public static void main(String[] args) {
         Customer customer = new Customer();
         Employee employee = new Employee();
@@ -15,7 +15,7 @@ public class Main {
         employee.age = 12;
         employee.salary = 5000;
 
-        CustomerManager  customerManager = new CustomerManager();
+        CustomerManagerInheritance  customerManager = new CustomerManagerInheritance();
         EmployeeManager employeeManager = new EmployeeManager();
 
         customerManager.Add();

@@ -3,7 +3,7 @@ import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class MainExample {
     public static void main(String[] args) {
         isPrime();
         isVowel("E");
@@ -13,6 +13,14 @@ public class Main {
         inheritanceExample();
         polimorphismExample();
         abstractExample();
+        interfaceExample();
+
+    }
+
+    private static void interfaceExample() {
+        ICustomerDal customerDal = new OracleCustomerDal();
+        customerDal.add();
+        System.out.println("interface finished");
     }
 
     private static void abstractExample() {
@@ -30,7 +38,7 @@ public class Main {
         for (BaseLogger logger : loggers) {
             logger.log(logger.getClass().getSimpleName());
         }
-        CustomerManager customerManager = new CustomerManager(new DatabaseLogger());
+        CustomerManagerExample customerManager = new CustomerManagerExample(new DatabaseLogger());
         customerManager.add();
     }
 

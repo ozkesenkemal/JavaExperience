@@ -1,6 +1,6 @@
-public class CustomerManager {
+public class CustomerManagerExample {
     private BaseLogger logger;
-    public CustomerManager(BaseLogger logger) {
+    public CustomerManagerExample(BaseLogger logger) {
         this.logger = logger;
     }
     public void add(){
