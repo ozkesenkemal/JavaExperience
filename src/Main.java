@@ -14,5 +14,6 @@ public class Main {
         MainString.main(null);
         MainExample.main(null);
         MainStatics.main(null);
+        MainPackage.main(null);
     }
 }
