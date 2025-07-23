@@ -15,5 +15,7 @@ public class Main {
         MainExample.main(null);
         MainStatics.main(null);
         MainPackage.main(null);
+        ArrayListExample.main(null);
+        HashMaps.main(null);
     }
 }

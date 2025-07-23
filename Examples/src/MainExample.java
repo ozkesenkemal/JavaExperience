@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +17,20 @@ public class MainExample {
         polimorphismExample();
         abstractExample();
         interfaceExample();
-
+        try {
+			fileReaderExample();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 
-    private static void interfaceExample() {
+    private static void fileReaderExample() throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		BufferedReader reader = new BufferedReader(new FileReader("numbers.txt"));
+	}
+
+	private static void interfaceExample() {
         ICustomerDal customerDal = new OracleCustomerDal();
         customerDal.add();
         customerDal = new MySqlCustomerDal();
