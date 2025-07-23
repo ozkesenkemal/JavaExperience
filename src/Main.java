@@ -17,5 +17,7 @@ public class Main {
         MainPackage.main(null);
         ArrayListExample.main(null);
         HashMaps.main(null);
+        MainException.main(null);
+        MainFile.main(null);
     }
 }
