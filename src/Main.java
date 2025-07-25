@@ -19,5 +19,6 @@ public class Main {
         HashMaps.main(null);
         MainException.main(null);
         MainFile.main(null);
+        MainThreads.main(null);
     }
 }
