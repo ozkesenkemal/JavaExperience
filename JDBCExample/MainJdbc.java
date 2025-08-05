@@ -11,11 +11,11 @@ public class MainJdbc {
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
 		selectExample();
-		InsertExample();
-		UpdateExample();
+		insertExample();
+		updateExample();
+		deleteExample();
 	}
-	
-	public static void UpdateExample() throws SQLException{
+	public static void deleteExample() throws SQLException{
 		DbHelper helper = new DbHelper();
 		Connection connection = null;
 		PreparedStatement  statement = null;
@@ -24,8 +24,31 @@ public class MainJdbc {
 		try {
 			connection = helper.GetConnection();
 			System.out.println("Connected to database");
-			String sql = "update city set population = 5000 where name = 'Düzce'";
+			String sql = "delete from city where name = ?";
 			statement = connection.prepareStatement(sql);
+			statement.setString(1, "Düzce");
+			int result = statement.executeUpdate();
+			System.out.println("Record Deleted to Database: " + result);
+		} catch (SQLException sqlException) {
+			helper.showErrorMessage(sqlException);
+		} finally {
+			statement.close();
+			connection.close();
+		}
+	}
+	
+	public static void updateExample() throws SQLException{
+		DbHelper helper = new DbHelper();
+		Connection connection = null;
+		PreparedStatement  statement = null;
+		ResultSet resultSet;
+
+		try {
+			connection = helper.GetConnection();
+			System.out.println("Connected to database");
+			String sql = "update city set population = 4000 where name = ?";
+			statement = connection.prepareStatement(sql);
+			statement.setString(1, "Düzce");
 			int result = statement.executeUpdate();
 			System.out.println("Record Updated to Database: " + result);
 		} catch (SQLException sqlException) {
@@ -36,7 +59,7 @@ public class MainJdbc {
 		}
 	}
 	
-	public static void InsertExample() throws SQLException{
+	public static void insertExample() throws SQLException{
 		DbHelper helper = new DbHelper();
 		Connection connection = null;
 		PreparedStatement  statement = null;
