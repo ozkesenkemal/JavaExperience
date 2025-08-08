@@ -20,7 +20,6 @@ public class MainJdbc {
 		Connection connection = null;
 		PreparedStatement  statement = null;
 		ResultSet resultSet;
-
 		try {
 			connection = helper.GetConnection();
 			System.out.println("Connected to database");
